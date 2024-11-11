@@ -121,40 +121,26 @@ class _HomePageState extends State<HomePage> {
               responseState == ResponseState.initial
                   ? const SizedBox()
                   : responseState == ResponseState.loading
-                      ? Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 8),
-                          width: size.width * 0.8,
-                          decoration: BoxDecoration(
-                            color: Colors.white12,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              apiRequest!,
-                              softWrap: true,
-                              style: const TextStyle(fontSize: 14),
-                            ),
-                          ),
-                        )
-                      : Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 8),
-                          width: size.width * 0.8,
-                          decoration: BoxDecoration(
-                            color: Colors.white12,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              apiRequest!,
-                              softWrap: true,
-                              style: const TextStyle(fontSize: 14),
-                            ),
-                          ),
-                        ),
+                      ? const SizedBox()
+                      : responseState == ResponseState.success
+                          ? Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 8),
+                              width: size.width * 0.8,
+                              decoration: BoxDecoration(
+                                color: Colors.white12,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  apiRequest!,
+                                  softWrap: true,
+                                  style: const TextStyle(fontSize: 14),
+                                ),
+                              ),
+                            )
+                          : const SizedBox(),
               const SizedBox(
                 height: 10,
               ),
